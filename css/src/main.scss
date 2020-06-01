@@ -35,6 +35,12 @@ $red: #BD2037;
 	background: white url(../img/bg-body.jpg) right center no-repeat;
 	height: 2100px;
 	position: relative;
+	font-size: 1.4em;
+	line-height: 1.4em;
+
+	@include respond-to( 840px ) {
+		font-size: 1em;
+	}
 
 	@include respond-to( 1300px ) {
 		margin-top: 50px;
@@ -58,6 +64,7 @@ $red: #BD2037;
 		input[type=submit], button, .btn {
 			@include clearfix;
 			@include font;
+			-webkit-appearance: none;
 			padding: 10px 35px;
 			background-color: $teal;
 			color: white;
@@ -94,14 +101,19 @@ $red: #BD2037;
 	.intro {
 		position: absolute;
 		top: 980px;
-		left: 200px;
-		right: 200px;
+		left: 75px;
+		right: 75px;
 		background: rgba( white, .8 );
 		font-size: 1.4em;
 		line-height: 1.4em;
 		text-align: center;
 		color: $green;
 		padding: 30px;
+
+		@include respond-to( 840px ) {
+			left: 200px;
+			right: 200px;
+		}
 	}
 
 	.bottom-signs {
