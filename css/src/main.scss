@@ -32,14 +32,16 @@ $red: #BD2037;
 
 
 .main-content {
-	background: white url(../img/bg-body.jpg) right center no-repeat;
-	height: 2100px;
+	background: white url(../img/bg-body.jpg) top right no-repeat;
 	position: relative;
 	font-size: 1.4em;
 	line-height: 1.4em;
+	padding-top: 470px;
 
 	@include respond-to( 840px ) {
 		font-size: 1em;
+		height: 2100px;
+		padding-top: 0;
 	}
 
 	@include respond-to( 1300px ) {
@@ -47,11 +49,15 @@ $red: #BD2037;
 	}
 	
 	.form {
-		position: absolute;
-		top: 490px;
-		right: 65px;
-		min-width: 600px;
-		max-width: 675px;
+		padding: 40px;
+
+		@include respond-to( 840px ) {
+			position: absolute;
+			top: 490px;
+			right: 65px;
+			width: 675px;
+			padding: 0;
+		}
 
 		p {
 			padding: 5px 0;
@@ -99,10 +105,6 @@ $red: #BD2037;
 	}
 
 	.intro {
-		position: absolute;
-		top: 980px;
-		left: 75px;
-		right: 75px;
 		background: rgba( white, .8 );
 		font-size: 1.4em;
 		line-height: 1.4em;
@@ -111,14 +113,21 @@ $red: #BD2037;
 		padding: 30px;
 
 		@include respond-to( 840px ) {
+			position: absolute;
+			top: 980px;
 			left: 200px;
 			right: 200px;
 		}
 	}
 
 	.bottom-signs {
-		position: absolute;
-		bottom: 0;
+		margin-top: 30px;
+
+		@include respond-to( 840px ) {
+			position: absolute;
+			bottom: 0;
+			margin-top: 0;
+		}
 	}
 
 	&.thanks {
@@ -135,11 +144,15 @@ $red: #BD2037;
 
 .bottom-banner {
 	@include font-bold;
-	font-size: 2em;
+	font-size: 1.6em;
 	text-align: center;
 	background: $green;
 	color: white;
 	padding: 40px 30px;
+
+	@include respond-to( 900px ) {
+		font-size: 2em;
+	}
 }
 
 
