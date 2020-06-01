@@ -49,13 +49,16 @@ $red: #BD2037;
 	}
 	
 	.form {
-		padding: 40px;
+		margin: 20px;
+		padding: 20px;
+		background: rgba( white, .6 );
 
 		@include respond-to( 840px ) {
 			position: absolute;
 			top: 490px;
 			right: 65px;
 			width: 675px;
+			margin: 0;
 			padding: 0;
 		}
 
