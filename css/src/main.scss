@@ -1,0 +1,180 @@
+
+
+// color variables
+$grey: #808184;
+$teal: #0599D0;
+$green: #54B35D;
+$red: #BD2037;
+
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+// wrap div
+.wrap {
+	width: 1220px;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+}
+
+.box-container {
+	box-shadow: 0 0 30px rgba( $grey, .2 );
+}
+
+
+.main-content {
+	background: white url(../img/bg-body.jpg);
+	height: 2100px;
+	position: relative;
+
+	@include respond-to( 1280px ) {
+		margin-top: 50px;
+	}
+	
+	.form {
+		position: absolute;
+		top: 490px;
+		right: 65px;
+		width: 675px;
+
+		p {
+			padding: 5px 0;
+		}
+
+		.half {
+			margin: 0 3% 0 0;
+		}
+
+		input[type=submit], button, .btn {
+			@include clearfix;
+			@include font;
+			padding: 10px 35px;
+			background-color: $teal;
+			color: white;
+			border: 0;
+			font-size: 1.3em;
+			line-height: 1.4em;
+			text-transform: uppercase;
+			cursor: pointer;
+			position: relative;
+			box-shadow: 3px 3px 25px rgba( black, .2 );
+
+			&:hover {
+				opacity: .9;
+				color: white;
+			}
+		}
+
+		.radio-pad {
+			padding: 10px 0;
+		}
+
+		.contact-us-statement {
+			@include font-bold;
+			font-size: 1.2em;
+			color: $teal;
+			padding: 10px 0;
+		}
+
+		.submit-button {
+			margin: 10px 0;
+		}
+	}
+
+	.intro {
+		position: absolute;
+		top: 980px;
+		left: 200px;
+		right: 200px;
+		background: rgba( white, .8 );
+		font-size: 1.4em;
+		line-height: 1.4em;
+		text-align: center;
+		color: $green;
+		padding: 30px;
+	}
+
+	.bottom-signs {
+		position: absolute;
+		bottom: 0;
+	}
+
+	&.thanks {
+		height: 900px;
+
+		.intro {
+			top: 550px;
+			left: 430px;
+			right: 120px;
+		}
+	}
+}
+
+
+.bottom-banner {
+	@include font-bold;
+	font-size: 2em;
+	text-align: center;
+	background: $green;
+	color: white;
+	padding: 40px 30px;
+}
+
+
+footer {
+	@include clearfix;
+	background: white;
+	padding: 30px;
+
+	h3 {
+		@include font-slab;
+		font-weight: 400;
+		font-size: 1.8em;
+		line-height: 1em;
+		color: $teal;
+		padding: 25px 0 5px;
+	}
+
+	h2 {
+		font-size: 2em;
+		line-height: 1em;
+		color: $grey;
+		padding: 5px 0;
+
+		a {
+			color: $grey;
+		}
+	}
+
+	.social {
+		padding: 10px 0 5px;
+
+		img {
+			width: 45px;
+			margin: 0 5px;
+		}
+	}
+}
+
+
+.fine-print {
+	padding: 20px;
+	font-size: .85em;
+	line-height: 1.3em;
+	text-align: left;
+	color: $grey;
+
+	img {
+		float: right;
+		margin: 0 0 15px 15px;
+	}
+}
+
