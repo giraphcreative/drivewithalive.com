@@ -19,7 +19,8 @@ $red: #BD2037;
 
 // wrap div
 .wrap {
-	width: 1220px;
+	min-width: 835px;
+	max-width: 1220px;
 	margin: 0 auto;
 	position: relative;
 	@include clearfix;
@@ -31,11 +32,11 @@ $red: #BD2037;
 
 
 .main-content {
-	background: white url(../img/bg-body.jpg);
+	background: white url(../img/bg-body.jpg) right center no-repeat;
 	height: 2100px;
 	position: relative;
 
-	@include respond-to( 1280px ) {
+	@include respond-to( 1300px ) {
 		margin-top: 50px;
 	}
 	
@@ -43,7 +44,8 @@ $red: #BD2037;
 		position: absolute;
 		top: 490px;
 		right: 65px;
-		width: 675px;
+		min-width: 600px;
+		max-width: 675px;
 
 		p {
 			padding: 5px 0;
