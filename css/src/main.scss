@@ -2,9 +2,11 @@
 
 // color variables
 $grey: #808184;
+$grey-dark: #333333;
 $teal: #0599D0;
 $green: #54B35D;
 $red: #BD2037;
+$yellow: #F6CA51;
 
 
 @import "reset";
@@ -17,13 +19,14 @@ $red: #BD2037;
 
 @import "grid";
 
+
 // wrap div
 .wrap {
-	min-width: 835px;
 	max-width: 1220px;
 	margin: 0 auto;
 	position: relative;
 	@include clearfix;
+	overflow: hidden;
 }
 
 .box-container {
@@ -32,43 +35,45 @@ $red: #BD2037;
 
 
 .main-content {
-	background: white url(../img/bg-body.jpg) top right no-repeat;
 	position: relative;
-	font-size: 1.4em;
-	line-height: 1.4em;
-	padding-top: 470px;
-
-	@include respond-to( 840px ) {
-		font-size: 1em;
-		height: 2100px;
-		padding-top: 0;
-	}
+	background: white;
 
 	@include respond-to( 1300px ) {
 		margin-top: 50px;
 	}
-	
-	.form {
-		margin: 20px 0;
-		padding: 20px 40px;
-		background: rgba( white, .6 );
 
-		@include respond-to( 840px ) {
-			background: none;
+	.main-title {
+		color: $grey-dark;
+		font-size: 1.4em;
+		line-height: 1.5em;
+		text-align: center;
+		padding: 20px;
+	}
+	
+	.contact-form {
+		padding: 20px;
+
+		@include respond-to( 1024px ) {
+			background: rgba( white, .8 );
 			position: absolute;
-			top: 490px;
-			right: 65px;
-			width: 675px;
+			top: 100px;
+			right: 0;
+			width: 42%;
 			margin: 0;
-			padding: 0;
+			padding: 20px;
+			box-shadow: 0 0 30px rgba( black, .3 );
+		}
+
+		@include respond-to( 1220px ) {
+			top: 215px;
 		}
 
 		p {
-			padding: 5px 0;
-		}
+			padding: 4px 0;
 
-		.half {
-			margin: 0 3% 0 0;
+			@include respond-to( 1220px ) {
+				padding: 10px 0;
+			}
 		}
 
 		input[type=submit], button, .btn {
@@ -76,11 +81,11 @@ $red: #BD2037;
 			@include font;
 			-webkit-appearance: none;
 			padding: 10px 35px;
-			background-color: $teal;
+			background-color: $red;
 			color: white;
 			border: 0;
-			font-size: 1.3em;
-			line-height: 1.4em;
+			font-size: 1.1em;
+			line-height: 1.1em;
 			text-transform: uppercase;
 			cursor: pointer;
 			position: relative;
@@ -98,8 +103,7 @@ $red: #BD2037;
 
 		.contact-us-statement {
 			@include font-bold;
-			font-size: 1.2em;
-			color: $teal;
+			color: $red;
 			padding: 10px 0;
 		}
 
@@ -108,54 +112,168 @@ $red: #BD2037;
 		}
 	}
 
-	.intro {
-		background: rgba( white, .8 );
-		font-size: 1.4em;
-		line-height: 1.4em;
+	.jumper-cables {
+		margin: 0 auto -25px;
 		text-align: center;
-		color: $green;
-		padding: 30px;
 
-		@include respond-to( 840px ) {
+		@include respond-to( 1024px ) {
 			position: absolute;
-			top: 980px;
-			left: 200px;
-			right: 200px;
+			right: 20px;
+			z-index: 10;
 		}
 	}
 
-	.bottom-signs {
-		margin-top: 30px;
+	.calculator {
+		background: $yellow;
+		color: black;
+		padding: 20px;
+		position: relative;
+		z-index: 5;
 
-		@include respond-to( 840px ) {
-			position: absolute;
-			bottom: 0;
-			margin-top: 0;
+		@include respond-to( 1024px ) {
+			padding: 20px 20px 20px 300px;
+		}
+
+		h3 {
+			@include respond-to( 768px ) {
+				padding: 10px 0 0 1.5%;
+			}
+
+			@include respond-to( 1024px ) {
+				padding: 30px;
+				background: $red;
+				color: white;
+				position: absolute;
+				left: -40px;
+				top: 25px;
+				font-size: 2em;
+				width: 300px;
+			}
+
+			@include respond-to( 1220px ) {
+				top: 20px;
+			}
+		}
+
+		@include respond-to( 1024px ) { 
+			margin: 20px 300px 20px 40px;
+		}
+
+		.form {
+			background: transparent;
+			padding: 0;
+		}
+
+		.result {
+			padding: 8px 0;
+			font-size: 1.2em;
+
+			span {
+				@include font-bold;
+			}
+
+			@include respond-to( 768px ) {
+				padding: 40px 0 0 20px;
+			}
+
+			@include respond-to( 1024px ) {
+				padding-top: 26px;
+			}
+
+			@include respond-to( 1220px ) {
+				padding: 40px 0 0 0;
+			}
 		}
 	}
 
-	&.thanks {
-		height: 900px;
+	&.thanks .intro {
+		padding: 50px 0 200px 0;
+	}
+}
 
-		.intro {
-			top: 550px;
-			left: 430px;
-			right: 120px;
+
+.columns {
+	padding: 40px 20px 20px;
+	background: url(../img/bg-tread.png) center center no-repeat;
+	background-size: contain;
+
+	@include respond-to( 768px ) {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
+	.column {
+		display: flex;
+
+		@include respond-to( 768px ) {
+			flex: 1 0 50%;
+			align-items: center;
 		}
+
+		.icon {
+			flex-basis: 25%;
+			text-align: right;
+			padding: 0 10px 0 0;
+		}
+
+		.desc {
+			flex-basis: 75%;
+			font-size: 1.2em;
+			line-height: 1.5em;
+			align-content: middle;
+		}
+	}
+}
+
+
+.apply-button {
+	padding: 20px;
+	text-align: center;
+
+	@include respond-to( 1024px ) {
+		padding: 40px 50px 80px;
+	}
+
+	.btn {
+		@include font-bold;
+		background: $red;
+		color: white;
+		padding: 12px 20px;
+		font-size: 1.3em;
+		line-height: 1em;
+		text-transform: uppercase;
+		display: inline-block;
 	}
 }
 
 
 .bottom-banner {
 	@include font-bold;
-	font-size: 1.6em;
+	font-size: 1.3em;
 	text-align: center;
-	background: $green;
+	background: $red;
 	color: white;
 	padding: 40px 30px;
+	position: relative;
 
 	@include respond-to( 900px ) {
-		font-size: 2em;
+		font-size: 1.4em;
+	}
+
+	@include respond-to( 1024px ) {
+		padding-left: 150px;
+
+		&:before {
+			content: '';
+			width: 250px;
+			height: 270px;
+			background: url(../img/character-checker-flag.png) center center no-repeat;
+			background-size: contain;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
 	}
 }
 
@@ -163,7 +281,8 @@ $red: #BD2037;
 footer {
 	@include clearfix;
 	background: white;
-	padding: 30px;
+	padding: 20px;
+	position: relative;
 
 	h3 {
 		@include font-slab;

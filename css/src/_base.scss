@@ -1,14 +1,10 @@
 
 body {
 	@include font;
-	font-size: 85%;
+	font-size: 100%;
 	line-height: 1.5em;
 	color: $grey;
 	background-color: #eee;
-	
-	@include respond-to( 1024px ) {
-		font-size: 100%;
-	}
 }
 
 a {
@@ -64,17 +60,16 @@ input[type=text], select, textarea {
 	@include font;
 	display: block;
 	width: 100%;
-	padding: 12px 20px;
+	padding: 10px 16px;
 	border: 0;
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 15px;
+	line-height: 15px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	-webkit-appearance: none;
 	background: #eee;
 	border: 1px solid #aaa;
-	margin: 10px auto;
 
 	&.amount {
 		background: white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeBAMAAACcf1DPAAAAIVBMVEUAAACkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT7b4aZAAAACnRSTlMAm4ApQMYQ3W1QNQOf6wAAAIRJREFUKM9joA3gVMMlw7qEZJmkqlXLG7BJsFWtWrVKAJsM46pKl4kTsMlwrXLAYQ3XchCJXY8BkMRuz6IE7DLMq1YtxKErESiFQ5fRqlUBOKxiWrUYl/ukFuGS6cIpE4VVhiOBgQO7PVarQnGEddcqoH+w2sGiGLXQgHrpgIHZjYGWAADGBCLRA4y1vAAAAABJRU5ErkJggg==') left center no-repeat;

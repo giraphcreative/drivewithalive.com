@@ -1,4 +1,6 @@
 
+const sass = require('node-sass');
+
 module.exports = function(grunt) {
 
     // load all grunt tasks
@@ -6,77 +8,74 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 
-        // store some paths
-        cssDir: 'css',
-        scssDir: 'css/src',
-        jsDir: 'js',
-        jsLibDir: 'js/lib',
-        jsSrcDir: 'js/src',
-
-
-        // watch for changes and trigger compass, jshint, uglify and livereload
         watch: {
             js: {
-                files: ['<%= jsLibDir %>/**/*.js', '<%= jsSrcDir %>/*.js'],
+                files: ['js/src/*.js'],
                 tasks: ['uglify'],
                 options: {
-                    livereload: true,
-                },
+                    spawn: false
+                }
             },
             css: {
-                files: '<%= scssDir %>/*.scss',
-                tasks: ['sass', 'autoprefixer'],
+                files: ['css/src/*.scss'],
+                tasks: ['sass'],
                 options: {
-                    livereload: true,
-                },
+                    spawn: false
+                }
+            }
+        },
+
+
+        // uglify to concat, minify, and make source maps
+        uglify: {
+            dist: {
+                files: {
+                    'js/main.js': [
+                        'js/lib/jquery.min.js',
+                        'js/lib/accrue/jquery.accrue.js',
+                        'js/src/*.js',
+                    ]
+                }
             }
         },
 
 
         // we use the Sass
         sass: {
+            options: {
+                implementation: sass,
+                'output-style': 'compressed'
+            },
             dist: {
+                files: {
+                    'css/main.css': 'css/src/main.scss'
+                }
+            },
+            sourceMapSimple: {
                 options: {
-                    // nested, compact, compressed, expanded
-                    style: 'compressed'
+                    sourceMap: true
                 },
                 files: {
-                    '<%= scssDir %>/main-unprefixed.css': '<%= scssDir %>/main.scss'
+                    'css/main.map.css': 'css/src/main.scss'
                 }
-            }
-        },
-
-
-        // uglify to concat & minify
-        uglify: {
-            js: {
-                files: {
-                    '<%= jsDir %>/main.js': [
-                        '<%= jsLibDir %>/jquery.min.js',
-                        '<%= jsLibDir %>/accrue/jquery.accrue.js',
-                        '<%= jsSrcDir %>/*.js',
-                    ],
-                    '<%= jsDir %>/head.js': [
-                        '<%= jsLibDir %>/shiv/dist/html5shiv.js',
-                        '<%= jsLibDir %>/respond/dest/respond.min.js',
-                    ],
-                }
-            }
-        },
-
-
-        // auto-prefix our css3 properties.
-        autoprefixer: {
-            files: {
-                dest: '<%= cssDir %>/main.css',
-                src: '<%= scssDir %>/main-unprefixed.css'
-            }
-        },
-
-
+            },        
+        }
+        
     });
-
 
     // register task
     grunt.registerTask('default', ['watch']);
+
+    // a build task just in case we want to
+    grunt.registerTask('build', ['sass','uglify']);
+
 };
+
+
+
+
+
+        /*
+                        '<%= jsLibDir %>/jquery.min.js',
+                        '<%= jsLibDir %>/accrue/jquery.accrue.js',
+        */

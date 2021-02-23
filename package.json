@@ -1,12 +1,13 @@
 {
-    "name" : "alive-cu",
-    "version" : "1.0.0",
-    "devDependencies" : {
-        "grunt":                        "latest",
-        "grunt-contrib-sass":           "*",
-        "grunt-contrib-uglify":         "*",
-        "grunt-contrib-watch":          "*",
-        "grunt-autoprefixer":           "*",
-        "matchdep":                     "*"
+    "name": "alive-cu",
+    "version": "1.0.0",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-autoprefixer": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-sass": "*",
+        "matchdep": "*",
+        "node-sass": "*"
     }
 }
