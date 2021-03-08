@@ -220,13 +220,13 @@ select {
         position: absolute;
         top: 100px;
         right: 0;
-        width: 42%;
+        width: 41%;
         margin: 0;
         padding: 20px;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); } }
     @media only screen and (min-width: 1220px) {
       .main-content .contact-form {
-        top: 215px; } }
+        top: 240px; } }
     .main-content .contact-form p {
       padding: 4px 0; }
       @media only screen and (min-width: 1220px) {

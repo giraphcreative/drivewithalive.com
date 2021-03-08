@@ -58,14 +58,14 @@ $yellow: #F6CA51;
 			position: absolute;
 			top: 100px;
 			right: 0;
-			width: 42%;
+			width: 41%;
 			margin: 0;
 			padding: 20px;
 			box-shadow: 0 0 30px rgba( black, .3 );
 		}
 
 		@include respond-to( 1220px ) {
-			top: 215px;
+			top: 240px;
 		}
 
 		p {
